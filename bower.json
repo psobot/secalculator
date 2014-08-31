@@ -1,0 +1,27 @@
+{
+  "name": "cost-of-se",
+  "version": "0.0.1",
+  "authors": [
+    "Peter Sobot <psobot@gmail.com>"
+  ],
+  "description": "A cost calculator for Software Engineering degrees at UWaterloo.",
+  "keywords": [
+    "engineering",
+    "uwaterloo",
+    "waterloo"
+  ],
+  "license": "MIT",
+  "homepage": "http://petersobot.com/cost-of-se",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "d3": "~3.4.11"
+  }
+}
