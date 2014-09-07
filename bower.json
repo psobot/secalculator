@@ -25,6 +25,7 @@
     "d3": "~3.4.11",
     "lodash": "~2.4.1",
     "angular": "~1.2.23",
-    "angular-fcsa-number": "~1.2.1"
+    "angular-fcsa-number": "~1.2.1",
+    "bootstrap": "~3.2.0"
   }
 }
