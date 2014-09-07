@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="calculator">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Software Engineering Financial Calculator</title>
+    <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+    <link rel="stylesheet" type="text/css" href="vendor-style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="vendor.js"></script>
+    <script type="text/javascript" src="application.js"></script>
+  </head>
+
+  <body ng-controller="CalculatorController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Software Engineering Financial Calculator</h1>
+        </div>
+
+        <div class="col-md-4">
+          <h3><small>Use this handy calculator to estimate your finances during your 5-year
+          Waterloo Soft. Eng. degree.</small></h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="graph" class="col-md-8" graph></div>
+
+        <div class="col-md-4">
+          <div id="earnings" class="well positive">
+            When you graduate from Software Engineering, you will <span class="earned">have
+            earned</span> <span class="owe">owe</span>
+
+            <h1 id="total">$0.00</h1><span class="earned">and have no debt.</span>
+            <span class="owe">in total.</span>
+          </div>
+
+          <p class="small"><strong>Disclaimer: this calculator is not a financial
+          advisor.</strong></p>
+
+          <p class="small">The information on this website is provided for education and
+          informational purposes only, without any express or implied warranty of any kind,
+          including warranties of accuracy, completeness, or fitness for any particular
+          purpose.</p>
+          <hr />
+
+          <p class="small">Contribute data, fix bugs, or fork your own <a href=
+          "https://github.com/psobot/secalculator">on Github.</a><br />
+          Created by <a href="http://petersobot.com">Peter Sobot</a>, <a href=
+          "https://uwaterloo.ca/software-engineering/">UW Software
+          Engineering</a>&nbsp;2014.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Customization <small>Adjust parameters below to change the graph
+          above.</small></h2>
+        </div>
+
+        <div class="col-md-4">
+          <h3><small>Default values taken from 2009-2014.</small></h3>
+        </div>
+      </div>
+
+      <div class='row' ng-repeat="terms in data.years">
+        <div class="col-md-4" ng-repeat="term in terms">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+
+              <div class="dropdown pull-right" ng-if="term.presets">
+                <a class="dropdown-toggle" id="{{ field.dropdownId }}" data-toggle="dropdown">
+                  Presets
+                  <span class="caret">
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="field.dropdownId">
+                  <li role="presentation" ng-repeat="preset in term.presets">
+                    <a role="menuitem" tabindex="-1" id="{{preset.id}}" ng-click="applyPreset(term, preset)">
+                      {{preset.name}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <h3 class="panel-title">
+                {{term.name}}
+              </h3>
+
+            </div>
+            <div class="panel-body">
+              <form class="form-horizontal">
+                <div class="form-group" ng-repeat="field in term.fields">
+                  <div class="row">
+                    <label class="col-sm-5 control-label" for="{{field.id}}">
+                      {{field.name}}
+                      <p class="small" ng-if="field.detail || field.unit">
+                        {{ field.unit ? 'per ' + field.unit : '' }}
+                        <small ng-if="field.detail">
+                          {{field.detail}}
+                        </small>
+                      </p>
+                    </label>
+                    <div class="col-sm-6">
+                      <div class='input-group'>
+                        <span class="input-group-addon">$</span>
+                        <input type='text' class='form-control' id="{{field.id}}" ng-model="field.value" fcsa-number />
+
+                        <div class='input-group-btn' ng-if="field.defaults">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="{{field.dropdownId}" data-toggle="dropdown">
+                              <span class='caret'></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="field.dropdownId">
+                              <li role="presentation" ng-repeat="_default in field.defaults">
+                                <a role="menuitem" tabindex="-1" ng-click="applyDefault(field, _default)">
+                                  {{_default.name}}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

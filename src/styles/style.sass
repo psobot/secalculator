@@ -1,3 +1,78 @@
-body {
-  background: blue;
+a {
+  cursor: pointer;
+}
+
+$top-height: 500px;
+
+@media screen and (min-height: ($top-height * 1.5)) {
+  .container:first-child {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: white;
+    height: $top-height;
+
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  .container:last-child {
+    margin-top: $top-height;
+    z-index: 1;
+  }
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: orange;
+  stroke-width: 1.5px;
+}
+
+#earnings.positive {
+  .earned {
+    display: inline;
+  }
+  .owe {
+    display: none;
+  }
+}
+
+#earnings.negative {
+  .earned {
+    display: none;
+  }
+  .owe {
+    display: inline;
+  }
+}
+
+p.small small {
+  font-weight: normal;
+  display: block;
 }
