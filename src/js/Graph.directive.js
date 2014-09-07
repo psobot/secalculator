@@ -1,7 +1,7 @@
 calculator.directive('graph', function () {
   var margin = {top: 20, right: 20, bottom: 30, left: 60},
       width = 750 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+      height = 300 - margin.top - margin.bottom;
 
   return {
     link: function (scope, element, attrs) {
