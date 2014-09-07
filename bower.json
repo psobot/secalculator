@@ -1,17 +1,17 @@
 {
-  "name": "cost-of-se",
+  "name": "secalculator",
   "version": "0.0.1",
   "authors": [
     "Peter Sobot <psobot@gmail.com>"
   ],
-  "description": "A cost calculator for Software Engineering degrees at UWaterloo.",
+  "description": "A handy financial calculator to estimate the cost of a Waterloo Software Engineering degree.",
   "keywords": [
     "engineering",
     "uwaterloo",
     "waterloo"
   ],
   "license": "MIT",
-  "homepage": "http://petersobot.com/cost-of-se",
+  "homepage": "http://github.com/psobot/secalculator",
   "private": true,
   "ignore": [
     "**/.*",
@@ -24,7 +24,6 @@
     "jquery": "~2.1.1",
     "d3": "~3.4.11",
     "lodash": "~2.4.1",
-    "handlebars": "~1.3.0",
     "angular": "~1.2.23",
     "angular-fcsa-number": "~1.2.1"
   }
