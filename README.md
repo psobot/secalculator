@@ -21,7 +21,8 @@ See it live at [http://petersobot.com/secalculator](http://petersobot.com/secalc
 
 SE Calculator uses a [Gulp](http://gulpjs.com/)-based build system
 and includes a Makefile for convenience. The resulting static HTML
-is placed in `public/`.
+is placed in `public/`. The frontend is an Angular.js app, with a 
+custom graphing directive to interface with D3.js.
 
     make # to build (downloads deps as required)
     make watch # to build every time you change a file
@@ -52,3 +53,6 @@ warranties of accuracy, completeness, or fitness for any particular purpose.
 I wrote this late at night with little concern for best practises, instead
 trying to get something out before Frosh Week was over so that the 2019 frosh
 could use this tool. If you're reading the code, my apologies for its quality.
+
+Having said that, please feel free to jump in and make changes! I'll gladly
+review pull requests and fix issues.
