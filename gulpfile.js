@@ -24,6 +24,7 @@ var vendorStyles = [
   ['bower_components', 'bootstrap', 'dist', 'css', 'bootstrap.min.css'],
 ];
 
+var imgGlob = path.join(__dirname, 'src', 'img', '*.*');
 var htmlGlob = path.join(__dirname, 'src', '*.html');
 var destination = path.join(__dirname, 'public');
 
@@ -41,6 +42,12 @@ gulp.task('styles', function () {
     .src(stylesGlob)
     .pipe(concat('style.css'))
     .pipe(sass())
+    .pipe(gulp.dest(destination));
+});
+
+gulp.task('img', function () {
+  return gulp
+    .src(imgGlob)
     .pipe(gulp.dest(destination));
 });
 
@@ -76,6 +83,7 @@ gulp.task('watch', function () {
   gulp.watch(stylesGlob, ['styles']);
   gulp.watch(vendorStyles, ['vendor-styles']);
   gulp.watch(htmlGlob, ['html']);
+  gulp.watch(imgGlob, ['img']);
 });
 
-gulp.task('build', ['js', 'vendor-js', 'styles', 'vendor-styles', 'html']);
+gulp.task('build', ['js', 'vendor-js', 'styles', 'vendor-styles', 'html', 'img']);
