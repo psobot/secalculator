@@ -15,7 +15,7 @@ See it live at [http://petersobot.com/secalculator](http://petersobot.com/secalc
 
     #   If you use Pow for local dev servers, this
     #   will link up the project to secalculator.dev
-    ln -s `pwd`/secalculator ~/.pow/secalculator.dev
+    ln -s `pwd`/secalculator ~/.pow/secalculator
 
 ## Building & Developing
 
